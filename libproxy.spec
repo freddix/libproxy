@@ -4,12 +4,12 @@
 
 Summary:	Library for automatic proxy configuration management
 Name:		libproxy
-Version:	0.4.7
-Release:	3
+Version:	0.4.8
+Release:	2
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://libproxy.googlecode.com/files/%{name}-%{version}.tar.gz
-# Source0-md5:	509e03a488a61cd62bfbaf3ab6a2a7a5
+# Source0-md5:	b7d0c7b4f849895fbf1d1b5fb720b296
 Patch0:		%{name}-unistd.patch
 URL:		http://code.google.com/p/libproxy/
 %if !%{with bootstrap}
@@ -114,6 +114,11 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_libdir}/%{name}/%{version}
 %dir %{_libdir}/%{name}/%{version}/modules
 
+%files gnome3
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/%{name}/%{version}/modules/config_gnome3.so
+%attr(755,root,root) %{_libdir}/%{name}/pxgsettings
+
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libproxy.so
@@ -136,11 +141,6 @@ rm -rf $RPM_BUILD_ROOT
 %files networkmanager
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/%{name}/%{version}/modules/network_networkmanager.so
-
-%files gnome3
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/%{name}/%{version}/modules/config_gnome3.so
-%attr(755,root,root) %{_libdir}/%{name}/pxgsettings
 
 %if 0
 %files mozjs

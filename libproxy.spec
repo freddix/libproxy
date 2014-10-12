@@ -5,7 +5,7 @@
 Summary:	Library for automatic proxy configuration management
 Name:		libproxy
 Version:	0.4.11
-Release:	2
+Release:	3
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://libproxy.googlecode.com/files/%{name}-%{version}.tar.gz
@@ -20,7 +20,6 @@ BuildRequires:	perl-devel
 BuildRequires:	pkg-config
 BuildRequires:	python-devel
 BuildRequires:	rpm-pythonprov
-BuildRequires:	xorg-libXmu-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		modulesdir	%{_libdir}/%{name}/%{version}/modules
